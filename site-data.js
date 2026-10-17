@@ -19,7 +19,7 @@ const SITE = {
   // Sportsfest runs 6–7 November 2026. Format: YYYY-MM-DDTHH:mm:ss
   startDate: "2026-11-06T08:00:00",
   endDate: "2026-11-07T18:00:00",
-  dateLabel: "NOVEMBER 6–7, 2026",
+  dateLabel: "NOVEMBER 7–8, 2026",
   venue: "IBNE SINA COLLEGE",
 
   // ---- 3. ABOUT -----------------------------------------------------------
