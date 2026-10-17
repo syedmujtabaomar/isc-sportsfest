@@ -145,7 +145,7 @@ const SITE = {
   schedule: [
     {
       day: "Day 01",
-      date: "NOV 06",
+      date: "NOV 07",
       items: [
         { time: "TBA", title: "Opening ceremony" },
         { time: "TBA", title: "Futsal" },
@@ -156,7 +156,7 @@ const SITE = {
     },
     {
       day: "Day 02",
-      date: "NOV 07",
+      date: "NOV 08",
       items: [
         { time: "TBA", title: "Badminton" },
         { time: "TBA", title: "Volleyball" },
