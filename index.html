@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ISC Intra Sportsfest — Ibne Sina College</title>
+<meta name="description" content="Official site of the ISC Intra Sportsfest at Ibne Sina College: nine sports, schedule, code of conduct and team contacts. Registration desk opens 23 October." />
+<meta name="theme-color" content="#6a1226" />
+<meta property="og:title" content="ISC Intra Sportsfest — Ibne Sina College" />
+<meta property="og:description" content="Nine sports. One college. Registration desk opens 23 October during break." />
+<meta property="og:image" content="assets/crest-burgundy.png" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="assets/favicon.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-crest-wrap">
+        <img class="brand-crest is-dark" data-src="logoLight" data-alt="logoAlt" src="assets/crest-white.png" alt="Ibne Sina College crest" />
+      </span>
+      <span class="brand-name" data-text="brandWordmark">ISC Intra Sportsfest</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#top">Home</a>
+      <a href="#register">Registration</a>
+      <a href="#sports">Sports</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#conduct">Code of Conduct</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow" data-text="presentedBy">Ibne Sina College proudly presents</p>
+    <h1 class="hero-title" data-text="eventName">ISC Intra Sportsfest</h1>
+
+    <img class="hero-crest" data-src="logo" data-alt="logoAlt" src="assets/crest-burgundy.png" alt="Ibne Sina College crest" />
+
+
+    <div class="countdown" id="countdown" hidden>
+      <div class="cd-cell"><strong data-cd="days">00</strong><span>Days</span></div>
+      <div class="cd-cell"><strong data-cd="hours">00</strong><span>Hrs</span></div>
+      <div class="cd-cell"><strong data-cd="mins">00</strong><span>Min</span></div>
+      <div class="cd-cell"><strong data-cd="secs">00</strong><span>Sec</span></div>
+    </div>
+
+    <p class="hero-dates" data-text="dateLabel"></p>
+    <p class="hero-venue" data-text="venue"></p>
+
+    <div class="hero-actions">
+      <a class="btn" href="#sports">See the sports</a>
+      <a class="btn btn-ghost" href="#register">Registration desk</a>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#register" aria-label="Scroll down">↓</a>
+</section>
+
+<main>
+  <section class="section register" id="register">
+    <div class="wrap register-inner">
+      <p class="kicker">Registrations</p>
+      <h2 class="section-title">REGISTRATION DESK</h2>
+      <p class="register-sub">The registration desk will be set up in school on 23 October during break. Come by to sign up for your sports.</p>
+
+      <div class="register-steps">
+        <div><span>WHEN</span><p>23 October</p></div>
+        <div><span>TIME</span><p>During break</p></div>
+        <div><span>WHERE</span><p>Registration desk, Ibne Sina College</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="sports">
+    <div class="wrap">
+      <p class="kicker">Choose your game</p>
+      <h2 class="section-title">SPORTS &amp; CATEGORIES</h2>
+      <div class="sport-grid" data-sports></div>
+    </div>
+  </section>
+
+  <section class="section" id="schedule">
+    <div class="wrap">
+      <p class="kicker">Fixtures</p>
+      <h2 class="section-title">THE LINE-UP</h2>
+      <div class="schedule-grid" data-schedule></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="conduct">
+    <div class="wrap">
+      <p class="kicker">Fair play</p>
+      <h2 class="section-title">CODE OF CONDUCT</h2>
+      <ol class="conduct-list" data-conduct></ol>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <p class="kicker">Get in touch</p>
+      <h2 class="section-title">MEET THE<br /><span class="accent">SPORTSFEST TEAM</span></h2>
+      <div class="team-grid" data-team></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img data-src="logoLight" data-alt="logoAlt" src="assets/crest-white.png" alt="" width="56" height="56" />
+      <div>
+        <p class="footer-title" data-text="eventWordmark"></p>
+        <p class="footer-motto" data-text="footerMotto"></p>
+        <p class="footer-note" data-text="footerNote"></p>
+      </div>
+    </div>
+    <nav class="footer-links" data-socials></nav>
+    <p class="footer-copy"><span>© <span id="year"></span> <span data-text="school"></span>. All rights reserved.</span><span>Made by Mujtaba Omar</span></p>
+  </div>
+</footer>
+
+<dialog id="sportDialog" class="sport-dialog" aria-labelledby="sdTitle">
+  <div class="sd-head">
+    <h3 class="sd-title" id="sdTitle"></h3>
+    <p class="sd-days"></p>
+    <button type="button" class="sd-close" aria-label="Close">×</button>
+  </div>
+  <div class="sd-body"></div>
+</dialog>
+
+<script src="site-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
