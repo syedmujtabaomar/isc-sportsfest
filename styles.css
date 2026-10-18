@@ -56,9 +56,9 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}p{margin:0
 @keyframes drift{from{transform:translate3d(-4%,-3%,0) rotate(0)}to{transform:translate3d(5%,4%,0) rotate(8deg)}}
 .hero-inner{position:relative;display:flex;flex-direction:column;align-items:center}
 .hero .eyebrow{display:inline-block;padding:.45rem 1rem;border:1px solid var(--line-strong);border-radius:999px;background:rgba(255,255,255,.7);backdrop-filter:blur(6px);margin-bottom:1.3rem}
-.hero-title{font-family:var(--display);font-weight:700;font-size:clamp(2rem,7.2vw,5.4rem);line-height:.98;letter-spacing:-.04em;text-transform:uppercase;margin:0;background:linear-gradient(100deg,#4a0b1a 0%,#6a1226 38%,#d98ba0 50%,#6a1226 62%,#4a0b1a 100%) 0 0/260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+.hero-title{font-family:var(--display);font-weight:700;font-size:clamp(2rem,7.2vw,5.4rem);line-height:.98;letter-spacing:-.04em;text-transform:uppercase;margin:0;background:linear-gradient(100deg,#4a0b1a 0%,#6a1226 38%,#d98ba0 50%,#6a1226 62%,#4a0b1a 100%) 0 0/260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite,rise 1s var(--ease) both;animation-delay:0s,calc(var(--t) + .12s)}
 @keyframes shine{from{background-position:130% 0}to{background-position:-130% 0}}
-.hero-crest{width:clamp(130px,20vw,200px);margin:clamp(1.2rem,3vw,2rem) 0 0;filter:drop-shadow(0 18px 28px rgba(74,11,26,.25));animation:fl 6s ease-in-out infinite}
+.hero-crest{width:clamp(130px,20vw,200px);margin:clamp(1.2rem,3vw,2rem) 0 0;filter:drop-shadow(0 18px 28px rgba(74,11,26,.25));animation:fl 6s ease-in-out infinite,rise 1.1s var(--ease) both;animation-delay:0s,calc(var(--t) + .28s)}
 @keyframes fl{50%{transform:translateY(-10px)}}
 .countdown{display:flex;gap:.6rem;margin-top:1.8rem}
 .cd-cell{min-width:78px;padding:.75rem .5rem .6rem;border:1px solid rgba(255,255,255,.9);border-radius:18px;background:var(--gloss),rgba(255,255,255,.55);backdrop-filter:blur(10px);box-shadow:0 14px 30px -20px rgba(74,11,26,.6),inset 0 1px 0 #fff}
@@ -67,7 +67,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}p{margin:0
 .hero-dates{font:600 clamp(1.1rem,3vw,1.8rem) var(--display);letter-spacing:-.01em;text-transform:uppercase;margin:1.7rem 0 .3rem}
 .hero-venue{font:400 .7rem var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:0}
 .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}
-.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:50%;background:rgba(255,255,255,.7);color:var(--burgundy);animation:bob 2.4s ease-in-out infinite}
+.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:50%;background:rgba(255,255,255,.7);color:var(--burgundy);animation:bob 2.4s ease-in-out infinite,rise .9s var(--ease) both;animation-delay:0s,calc(var(--t) + 1.1s)}
 @keyframes bob{50%{transform:translate(-50%,6px)}}
 
 /* ───────── sections ───────── */
@@ -194,3 +194,39 @@ body:has(dialog[open]){overflow:hidden}
   .hero-actions .btn{width:100%}
   .footer-inner{flex-direction:column;align-items:flex-start}
 }
+
+/* ============================================================================
+   INTRO — burgundy screen, crest zooms out into place, then zooms through
+   to reveal the site; header + hero content rise in one after another.
+   Timeline: 0–0.9s crest settles · hold · 1.75s zoom-through · site revealed ~2.8s
+   ========================================================================== */
+:root{--t:1.95s}                                  /* when the site starts revealing */
+.countdown[hidden]{display:none}
+html{animation:intro-lock 2.8s steps(1,end)}      /* no scrolling while the intro plays */
+@keyframes intro-lock{from,to{overflow:hidden}}
+
+body::before,body::after{content:"";position:fixed;pointer-events:none}
+body::before{inset:0;z-index:99;background:radial-gradient(60% 60% at 50% 45%,#8a1c33 0%,#6a1226 45%,#3d0815 100%);animation:intro-veil 2.8s ease-in-out forwards}
+body::after{inset:0;margin:auto;width:min(46vmin,300px);height:min(46vmin,300px);z-index:100;background:url(assets/crest-white.png) center/contain no-repeat;animation:intro-logo 2.8s forwards;will-change:transform,opacity}
+@keyframes intro-veil{0%,62%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+@keyframes intro-logo{
+  0%{opacity:0;transform:scale(1.4);filter:blur(12px);animation-timing-function:cubic-bezier(.22,.61,.36,1)}
+  32%{opacity:1;transform:scale(1);filter:blur(0)}
+  62%{opacity:1;transform:scale(1);animation-timing-function:cubic-bezier(.65,0,.9,.45)}
+  82%{opacity:0;transform:scale(3.5)}
+  100%{opacity:0;transform:scale(4);visibility:hidden}
+}
+
+/* the site reveals itself in sequence */
+@keyframes rise{from{opacity:0;translate:0 28px;filter:blur(8px)}}
+@keyframes dropin{from{opacity:0;translate:0 -26px}}
+@keyframes bgin{from{opacity:0;scale:1.1}}
+.hero-bg{animation:bgin 1.8s var(--ease) both;animation-delay:calc(var(--t) - .6s)}
+.site-header{animation:dropin 1s var(--ease) both;animation-delay:calc(var(--t) - .1s)}
+.hero .eyebrow{animation:rise .9s var(--ease) both;animation-delay:var(--t)}
+.countdown{animation:rise .9s var(--ease) both;animation-delay:calc(var(--t) + .42s)}
+.hero-dates{animation:rise .9s var(--ease) both;animation-delay:calc(var(--t) + .54s)}
+.hero-venue{animation:rise .9s var(--ease) both;animation-delay:calc(var(--t) + .62s)}
+.hero-actions{animation:rise .9s var(--ease) both;animation-delay:calc(var(--t) + .74s)}
+
+@media(prefers-reduced-motion:reduce){body::before,body::after{display:none!important}}
