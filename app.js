@@ -5,12 +5,12 @@ $$("[data-src]").forEach(e=>{if(S[e.dataset.src])e.src=S[e.dataset.src];if(S[e.d
 const set=(k,html)=>{const b=$(`[data-${k}]`);if(b&&S[k])b.innerHTML=S[k].map(html).join("")};
 set("about",p=>`<p>${p}</p>`);
 set("stats",s=>`<div class="stat"><strong>${s.value}</strong><span>${s.label}</span></div>`);
-set("sports",(sp,i)=>`<article class="sport-card" data-i="${i}"><div class="sport-body"><h3 class="sport-name">${sp.name}</h3><p class="sport-days">${sp.days||""}</p><button type="button" class="sport-more" aria-haspopup="dialog">View details</button></div></article>`);
+set("sports",(sp,i)=>`<article class="sport-card" data-i="${i}"><div class="sport-body"><h3 class="sport-name">${sp.name}</h3>${sp.days?`<p class="sport-days">${sp.days}</p>`:""}<button type="button" class="sport-more" aria-haspopup="dialog">View details</button></div></article>`);
 const dlg=$("#sportDialog"),row=(h,v)=>`<div class="sd-row"><h4>${h}</h4><p>${v}</p></div>`;
 if(dlg){$(".sd-close",dlg).onclick=()=>dlg.close();dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
-$$(".sport-card").forEach(c=>c.addEventListener("click",()=>{const sp=S.sports[c.dataset.i],lead=(S.team||[])[0],cats=(sp.categories||[]).join(", ");
-$(".sd-title",dlg).textContent=sp.name;$(".sd-days",dlg).textContent=sp.days||"";
-$(".sd-body",dlg).innerHTML=(sp.about?row("About",sp.about):"")+(cats?row("Categories",cats):"")+(sp.rules&&sp.rules.length?`<div class="sd-row"><h4>Rules</h4><ul class="sd-rules">${sp.rules.map(r=>`<li>${r}</li>`).join("")}</ul></div>`:"")+row("Venue",sp.venue||"To be announced")+row("Registration","Registration desk in school on 23 October during break.")+(lead?row("Questions",`Contact ${lead.name}${lead.phone?` \u00b7 <a href="tel:${lead.phone.replace(/\s/g,"")}">${lead.phone}</a>`:""}`):"");
+$$(".sport-card").forEach(c=>c.addEventListener("click",()=>{const sp=S.sports[c.dataset.i],cats=(sp.categories||[]).join(", ");
+$(".sd-title",dlg).textContent=sp.name;const dd=$(".sd-days",dlg);dd.textContent=sp.days||"";dd.hidden=!sp.days;
+$(".sd-body",dlg).innerHTML=(sp.about?row("About",sp.about):"")+(cats?row("Categories",cats):"")+(sp.rules&&sp.rules.length?`<div class="sd-row"><h4>Rules</h4><ul class="sd-rules">${sp.rules.map(r=>`<li>${r}</li>`).join("")}</ul></div>`:"");
 dlg.showModal()}))}
 set("schedule",x=>`<div class="day-card"><header class="day-head"><span class="day-num">${x.day}</span><span class="day-date">${x.date}</span></header><ul class="day-list">${x.items.map(i=>`<li><time>${i.time}</time><span>${i.title}</span></li>`).join("")}</ul></div>`);
 const cb=$("[data-conduct]");if(cb)cb.innerHTML=S.conduct.map((r,i)=>`<li><span class="rule-num">${String(i+1).padStart(2,"0")}</span><span>${r}</span></li>`).join("");

@@ -16,9 +16,9 @@ const SITE = {
   logoAlt: "Ibne Sina College crest",
 
   // ---- 2. DATES & VENUE ---------------------------------------------------
-  // Sportsfest runs 6–7 November 2026. Format: YYYY-MM-DDTHH:mm:ss
-  startDate: "2026-11-06T08:00:00",
-  endDate: "2026-11-07T18:00:00",
+  // Sportsfest runs 7–8 November 2026. Format: YYYY-MM-DDTHH:mm:ss
+  startDate: "2026-11-07T08:00:00",
+  endDate: "2026-11-08T18:00:00",
   dateLabel: "NOVEMBER 7–8, 2026",
   venue: "IBNE SINA COLLEGE",
 
@@ -37,7 +37,6 @@ const SITE = {
   sports: [
         {
       name: "Futsal",
-      days: "Dates TBA",
       categories: [],
       rules: [
         "5-a-side, 3 rolling substitutes.",
@@ -49,7 +48,6 @@ const SITE = {
     },
         {
       name: "Basketball",
-      days: "Dates TBA",
       categories: [],
       rules: [
         "5-a-side, with a maximum of 5 substitutions.",
@@ -66,12 +64,10 @@ const SITE = {
     },
         {
       name: "Athletics",
-      days: "Dates TBA",
       categories: ["400 m", "100 m"],
     },
         {
       name: "Dodgeball",
-      days: "Dates TBA",
       categories: [],
       rules: [
         "Each team must have 7 players, with up to 2 substitutions.",
@@ -89,7 +85,6 @@ const SITE = {
     },
         {
       name: "Gaming",
-      days: "Dates TBA",
       categories: ["FIFA only"],
       rules: [
         "Only approved game settings may be used.",
@@ -99,7 +94,6 @@ const SITE = {
     },
         {
       name: "Badminton",
-      days: "Dates TBA",
       categories: ["Doubles", "Singles"],
       rules: [
         "Standard serving, general faults and play rules apply.",
@@ -107,7 +101,6 @@ const SITE = {
     },
         {
       name: "Table Tennis",
-      days: "Dates TBA",
       categories: [],
       rules: [
         "Standard serving, general faults and play rules apply.",
@@ -115,7 +108,6 @@ const SITE = {
     },
         {
       name: "Chess",
-      days: "Dates TBA",
       categories: [],
       rules: [
         "Standard chess rules apply.",
@@ -126,7 +118,6 @@ const SITE = {
     },
         {
       name: "Volleyball",
-      days: "Dates TBA",
       categories: [],
       rules: [
         "Players: 6 on the court per team, with a total squad of 8.",
