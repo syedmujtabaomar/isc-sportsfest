@@ -132,29 +132,25 @@ const SITE = {
   ],
 
   // ---- 5. SCHEDULE --------------------------------------------------------
-  // TODO: which sport is on which day, and the times, are placeholders.
   schedule: [
     {
       day: "Day 01",
       date: "NOV 07",
       items: [
-        { time: "TBA", title: "Opening ceremony" },
-        { time: "TBA", title: "Futsal" },
-        { time: "TBA", title: "Basketball" },
-        { time: "TBA", title: "Table Tennis" },
-        { time: "TBA", title: "Chess" },
+        { title: "Entries" },
+        { title: "Opening ceremony" },
+        { title: "Group stages" },
+        { title: "Exhibition match" },
       ],
     },
     {
       day: "Day 02",
       date: "NOV 08",
       items: [
-        { time: "TBA", title: "Badminton" },
-        { time: "TBA", title: "Volleyball" },
-        { time: "TBA", title: "Dodgeball" },
-        { time: "TBA", title: "Gaming" },
-        { time: "TBA", title: "Athletics" },
-        { time: "TBA", title: "Prize distribution & closing" },
+        { title: "Semis" },
+        { title: "Finals" },
+        { title: "Flashback video" },
+        { title: "Awards ceremony" },
       ],
     },
   ],

@@ -12,7 +12,7 @@ $$(".sport-card").forEach(c=>c.addEventListener("click",()=>{const sp=S.sports[c
 $(".sd-title",dlg).textContent=sp.name;const dd=$(".sd-days",dlg);dd.textContent=sp.days||"";dd.hidden=!sp.days;
 $(".sd-body",dlg).innerHTML=(sp.about?row("About",sp.about):"")+(cats?row("Categories",cats):"")+(sp.rules&&sp.rules.length?`<div class="sd-row"><h4>Rules</h4><ul class="sd-rules">${sp.rules.map(r=>`<li>${r}</li>`).join("")}</ul></div>`:"");
 dlg.showModal()}))}
-set("schedule",x=>`<div class="day-card"><header class="day-head"><span class="day-num">${x.day}</span><span class="day-date">${x.date}</span></header><ul class="day-list">${x.items.map(i=>`<li><time>${i.time}</time><span>${i.title}</span></li>`).join("")}</ul></div>`);
+set("schedule",x=>`<div class="day-card"><header class="day-head"><span class="day-num">${x.day}</span><span class="day-date">${x.date}</span></header><ul class="day-list">${x.items.map(i=>`<li${i.time?"":` style="display:block"`}>${i.time?`<time>${i.time}</time>`:""}<span>${i.title}</span></li>`).join("")}</ul></div>`);
 const cb=$("[data-conduct]");if(cb)cb.innerHTML=S.conduct.map((r,i)=>`<li><span class="rule-num">${String(i+1).padStart(2,"0")}</span><span>${r}</span></li>`).join("");
 const ini=n=>n.split(/\s+/).filter(w=>/[a-z]/i.test(w[0])).slice(0,2).map(w=>w[0].toUpperCase()).join("");
 set("team",m=>`<article class="person"><div class="person-top"><span class="avatar">${ini(m.name)}</span><span class="dot"></span></div><h3 class="person-name">${m.name}</h3><p class="person-role">${m.role}</p><ul class="person-contact">${m.phone?`<li>☎ <a href="tel:${m.phone.replace(/\s/g,"")}">${m.phone}</a></li>`:""}${m.email?`<li><a href="mailto:${m.email}">${m.email}</a></li>`:""}</ul></article>`);
