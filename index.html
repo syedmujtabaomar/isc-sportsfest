@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ISC Intra Sportsfest — Ibne Sina College</title>
-<meta name="description" content="Official site of the ISC Intra Sportsfest at Ibne Sina College: nine sports, schedule, code of conduct and team contacts. Registration desk opens 23 October." />
+<title>ISC Charity Intra Sportsfest — Ibne Sina College</title>
+<meta name="description" content="Official site of the ISC Charity Intra Sportsfest at Ibne Sina College: nine sports, entry fees, code of conduct and team contacts. Registration desk opens 23 October." />
 <meta name="theme-color" content="#6a1226" />
-<meta property="og:title" content="ISC Intra Sportsfest — Ibne Sina College" />
+<meta property="og:title" content="ISC Charity Intra Sportsfest — Ibne Sina College" />
 <meta property="og:description" content="Nine sports. One college. Registration desk opens 23 October during break." />
 <meta property="og:image" content="assets/crest-burgundy.png" />
 <meta property="og:type" content="website" />
@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="theme.css" />
 </head>
 <body>
 
@@ -24,14 +25,14 @@
       <span class="brand-crest-wrap">
         <img class="brand-crest is-dark" data-src="logoLight" data-alt="logoAlt" src="assets/crest-white.png" alt="Ibne Sina College crest" />
       </span>
-      <span class="brand-name" data-text="brandWordmark">ISC Intra Sportsfest</span>
+      <span class="brand-name" data-text="brandWordmark">ISC Charity Intra Sportsfest</span>
     </a>
 
     <nav class="nav" id="nav">
       <a href="#top">Home</a>
       <a href="#register">Registration</a>
+      <a href="#aim">Our Aim</a>
       <a href="#sports">Sports</a>
-      <a href="#schedule">Schedule</a>
       <a href="#conduct">Code of Conduct</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -45,8 +46,8 @@
 <section class="hero" id="top">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <p class="eyebrow" data-text="presentedBy">Ibne Sina College proudly presents</p>
-    <h1 class="hero-title" data-text="eventName">ISC Intra Sportsfest</h1>
+    <p class="eyebrow" data-text="presentedBy">Ibne Sina College presents</p>
+    <h1 class="hero-title" data-text="eventName">ISC Charity Intra Sportsfest</h1>
 
     <img class="hero-crest" data-src="logo" data-alt="logoAlt" src="assets/crest-burgundy.png" alt="Ibne Sina College crest" />
 
@@ -62,8 +63,8 @@
     <p class="hero-venue" data-text="venue"></p>
 
     <div class="hero-actions">
-      <a class="btn" href="#sports">See the sports</a>
-      <a class="btn btn-ghost" href="#register">Registration desk</a>
+      <a class="btn" href="#sports">Explore sports</a>
+      <a class="btn btn-ghost" href="#register">Registration info</a>
     </div>
   </div>
   <a class="scroll-hint" href="#register" aria-label="Scroll down">↓</a>
@@ -72,35 +73,57 @@
 <main>
   <section class="section register" id="register">
     <div class="wrap register-inner">
-      <p class="kicker">Registrations</p>
+      <p class="kicker">Sign up</p>
       <h2 class="section-title">REGISTRATION DESK</h2>
-      <p class="register-sub">The registration desk will be set up in school on 23 October during break. Come by to sign up for your sports.</p>
+      <p class="register-sub">Find the desk at school on 23 October during break and lock in your sports. The more you play, the less each one costs.</p>
 
       <div class="register-steps">
         <div><span>WHEN</span><p>23 October</p></div>
         <div><span>TIME</span><p>During break</p></div>
         <div><span>WHERE</span><p>Registration desk, Ibne Sina College</p></div>
       </div>
+
+      <div class="timings">
+        <p class="fees-label">Event timings</p>
+        <div class="register-steps two">
+          <div><span>DAY 1 · NOV 7</span><p>8:30 AM – 5:00 PM</p></div>
+          <div><span>DAY 2 · NOV 8</span><p>8:30 AM – 5:00 PM</p></div>
+        </div>
+      </div>
+
+      <div class="fees">
+        <p class="fees-label">Entry fees</p>
+        <div class="fee-grid">
+          <div class="fee"><span>1 category</span><strong><small>Rs</small> 500</strong></div>
+          <div class="fee"><span>2 categories</span><strong><small>Rs</small> 750</strong></div>
+          <div class="fee"><span>3 categories</span><strong><small>Rs</small> 1000</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="aim">
+    <div class="wrap">
+      <div class="aim-grid">
+        <div>
+          <p class="kicker">Why we play</p>
+          <h2 class="section-title">OUR AIM</h2>
+          <span class="aim-chip">For Mumtaz Girls School</span>
+        </div>
+        <p class="aim-copy about-copy">The ISC Intra Sportsfest is more than a celebration of sports, teamwork, and competition; it is an opportunity to make a difference. This year, we aim to raise funds for <strong>Mumtaz Girls School</strong>, supporting girls who face financial barriers to education. Through our contributions, we hope to empower these hardworking students to pursue their dreams and build brighter futures. Together, let us transform the spirit of sports into a force for hope, opportunity, and lasting change.</p>
+      </div>
     </div>
   </section>
 
   <section class="section section-alt" id="sports">
     <div class="wrap">
-      <p class="kicker">Choose your game</p>
-      <h2 class="section-title">SPORTS &amp; CATEGORIES</h2>
+      <p class="kicker">Nine sports</p>
+      <h2 class="section-title">PICK YOUR GAME</h2>
       <div class="sport-grid" data-sports></div>
     </div>
   </section>
 
-  <section class="section" id="schedule">
-    <div class="wrap">
-      <p class="kicker">Fixtures</p>
-      <h2 class="section-title">THE LINE-UP</h2>
-      <div class="schedule-grid" data-schedule></div>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="conduct">
+  <section class="section" id="conduct">
     <div class="wrap">
       <p class="kicker">Fair play</p>
       <h2 class="section-title">CODE OF CONDUCT</h2>
@@ -108,7 +131,7 @@
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section section-alt" id="contact">
     <div class="wrap">
       <p class="kicker">Get in touch</p>
       <h2 class="section-title">MEET THE<br /><span class="accent">SPORTSFEST TEAM</span></h2>

@@ -6,9 +6,9 @@
 const SITE = {
   // ---- 1. IDENTITY --------------------------------------------------------
   school: "Ibne Sina College",
-  eventName: "ISC Intra Sportsfest",
+  eventName: "ISC Charity Intra Sportsfest",
   edition: "Ibne Sina College",
-  presentedBy: "Ibne Sina College proudly presents",
+  presentedBy: "Ibne Sina College presents",
   tagline: "One college. One roar. One champion.",
 
   logo: "assets/crest-burgundy.png",      // burgundy ink, used on white
@@ -127,30 +127,6 @@ const SITE = {
         "Block: a block touch does not count as one of the team's three touches.",
         "Serve: the server has 8 seconds to serve after the whistle.",
         "Other standard FIVB rules apply.",
-      ],
-    },
-  ],
-
-  // ---- 5. SCHEDULE --------------------------------------------------------
-  schedule: [
-    {
-      day: "Day 01",
-      date: "NOV 07",
-      items: [
-        { title: "Entries" },
-        { title: "Opening ceremony" },
-        { title: "Group stages" },
-        { title: "Exhibition match" },
-      ],
-    },
-    {
-      day: "Day 02",
-      date: "NOV 08",
-      items: [
-        { title: "Semis" },
-        { title: "Finals" },
-        { title: "Flashback video" },
-        { title: "Awards ceremony" },
       ],
     },
   ],
