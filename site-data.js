@@ -39,12 +39,23 @@ const SITE = {
     {
       name: "Futsal",
       categories: [],
+      numbered: true,
       rules: [
-        "5-a-side, 3 rolling substitutes.",
-        "Yellow card: cautions a player for unsporting behaviour, dissent or persistent fouls.",
-        "Red card: ejection for serious foul play or two yellow cards. The team plays one player down for two full minutes; the sent-off player cannot return or be substituted.",
-        "5-steps rule: all opposing players must retreat at least 5 steps from the ball on restarts (free kicks, kick-ins, corner kicks, kick-offs) until the ball is back in play.",
-        "The team taking a restart has 5 seconds to play the ball once ready, or possession passes to the opponent.",
+        "Players: Each team plays with 5 players on the field, including the goalkeeper.",
+        "Substitutions: Rolling substitutions are allowed, meaning a substituted player can enter the game again.",
+        "Match Duration: Total duration is 20 minutes, with each half lasting 10 minutes. In semi-finals and finals, each half may be extended to 12 minutes if the schedule allows.",
+        "Kick-off: The match begins with a kick-off from the centre spot. A coin toss determines which team takes the kick-off or chooses its starting half.",
+        "Winning: The team scoring more goals wins. If the match is tied, it may end in a draw during the group stage. Knockout matches will have a penalty shootout.",
+        "Offside: There is no offside.",
+        "Ball Out of Bounds: When the ball goes out of bounds, play restarts with a kick-in rather than a throw-in.",
+        "Free Kicks: Free kicks will be awarded as direct or indirect free kicks, depending on the offence.",
+        "Back-pass Rule: If a teammate passes the ball to the goalkeeper, the goalkeeper cannot use their hands to hold the ball.",
+        "Yellow Card: A yellow card is a warning for offences such as fouls.",
+        "Red Card: A red card means the player is sent off for the remainder of the match.",
+        "Referee's Decision: The referee's decision is final. Arguments with the referee can lead to the disqualification of the team.",
+        "Studs: Studs are strictly prohibited.",
+        "Accessories: Players cannot wear accessories such as jewellery or watches during the match.",
+        "Late Arrival: If a team is late and does not arrive on time, a walkover will be awarded to the opposing team, meaning they win by default.",
       ],
     },
     {
@@ -340,5 +351,18 @@ const SITE = {
   footerNote: "Organised by the ISC Sportsfest team.",
   footerMotto: "Learn. Understand. Implement.",
 };
+
+// Compatibility: an older app.js only understands "rules". Give it a flat copy of everything
+// (headings included) so no sport ever shows an empty pop-up. The newer app.js ignores this copy.
+SITE.sports.forEach((sp) => {
+  if (!sp.sections) return;
+  const flat = [...(sp.rules || [])];
+  sp.sections.forEach((s) => {
+    flat.push("<strong>" + s.title + "</strong>");
+    (s.items || [s.text]).forEach((t) => flat.push(t));
+  });
+  sp.modernRules = sp.rules || [];
+  sp.rules = flat;
+});
 
 window.SITE = SITE;
