@@ -25,11 +25,11 @@ const SITE = {
 
   // ---- 3. ABOUT -----------------------------------------------------------
   about: [
-    "The Ibne Sina Charity Sportsfest brings the whole college together for ten sports, from the futsal pitch to the chess board.",
+    "The Ibne Sina Charity Sportsfest brings the whole college together for eleven sports, from the futsal pitch to the chess board.",
     "Whether you play, cheer or compete from behind a screen, there is a place for you. Registration is at the desk in the hall during break: seniors on 23 October, juniors on 26 October.",
   ],
   stats: [
-    { value: "10", label: "Sports" },
+    { value: "11", label: "Sports" },
     { value: "23 OCT", label: "Registration desk" },
   ],
 
@@ -321,6 +321,19 @@ const SITE = {
         "The rope must pass between the body and the upper arm.",
         "No knots, loops, or wrapping the rope around any part of the body is allowed (except for the Anchor).",
         "Pullers must use bare hands and no material that may improve their grip.",
+      ],
+    },
+    {
+      name: "Arm Wrestling",
+      categories: [],
+      rules: [
+        "Both competitors must keep their elbows on the designated pads.",
+        "The free hand must hold the table peg.",
+        "The match starts on the referee’s command, “Ready, Go!”",
+        "The aim is to pin the opponent’s hand onto the pin pad.",
+        "Lifting the elbow, starting early, or breaking the grip illegally may result in a foul.",
+        "The referee decides the winner and applies penalties for fouls.",
+        "Stop immediately if the referee calls a halt or either competitor experiences pain.",
       ],
     },
   ],

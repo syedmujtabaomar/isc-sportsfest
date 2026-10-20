@@ -264,7 +264,7 @@ body::after{inset:0;margin:auto;width:min(46vmin,300px);height:min(46vmin,300px)
 .made-by b{color:#fff;font-weight:700}
 
 /* ───────── v8: 10-sport grid ───────── */
-@media(min-width:1000px){.sport-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.sport-card{padding:1.15rem}.sport-name{font-size:clamp(.95rem,1.3vw,1.2rem)}}
+@media(min-width:1000px){.sport-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.sport-name{font-size:clamp(1rem,1.5vw,1.3rem)}}
 @media(min-width:861px) and (max-width:999px){.sport-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ───────── v9: grouped rules in the sports pop-up ───────── */
