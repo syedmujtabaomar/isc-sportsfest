@@ -6,9 +6,9 @@
 const SITE = {
   // ---- 1. IDENTITY --------------------------------------------------------
   school: "Ibne Sina College",
-  eventName: "ISC Charity Intra Sportsfest",
+  eventName: "Ibne Sina Charity Sportsfest",
   edition: "Ibne Sina College",
-  presentedBy: "Ibne Sina College presents",
+  presentedBy: "Intra School Sportsfest",
   audienceTag: "Boys’ edition",        // glossy pill next to the line above
   tagline: "One college. One roar. One champion.",
 
@@ -25,8 +25,8 @@ const SITE = {
 
   // ---- 3. ABOUT -----------------------------------------------------------
   about: [
-    "The ISC Intra Sportsfest brings the whole college together for ten sports, from the futsal pitch to the chess board.",
-    "Whether you play, cheer or compete from behind a screen, there is a place for you. Registration opens at the school registration desk on 23 October.",
+    "The Ibne Sina Charity Sportsfest brings the whole college together for ten sports, from the futsal pitch to the chess board.",
+    "Whether you play, cheer or compete from behind a screen, there is a place for you. Registration is at the desk in the hall during break: seniors on 23 October, juniors on 26 October.",
   ],
   stats: [
     { value: "10", label: "Sports" },
